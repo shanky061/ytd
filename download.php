@@ -4,7 +4,7 @@ include_once('config.php');
 // Check download token
 if (empty($_GET['mime']) OR empty($_GET['token']))
 {
-	exit('Invalid download token 8{');
+	exit('Error: Invalid download token');
 }
 
 // Set operation params
@@ -17,7 +17,7 @@ $name = urldecode($_GET['title']). '.' .$ext;
 if ($url)
 {
 	$size=get_size($url);
-	// Generate the server headers
+	// Generate the file headers
 	if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE)
 	{
 		header('Content-Type: "' . $mime . '"');
