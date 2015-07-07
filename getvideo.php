@@ -101,7 +101,8 @@ if (isset($url_encoded_fmt_stream_map))
 	if ($debug)
 	{
 		echo '<pre>';
-		print_r($formats_array);
+//		print_r($formats_array);
+		echo $video_info;
 		echo '</pre>';
 	}
 }

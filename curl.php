@@ -37,12 +37,16 @@ function get_location($url) {
 	return '';
 }
 
+/*
+ * function to get size of file, follow if redirected
+ */ 
 function get_size($url) {
 	$my_ch = curl_init();
 	curl_setopt($my_ch, CURLOPT_URL, $url);
 	curl_setopt($my_ch, CURLOPT_HEADER, true);
 	curl_setopt($my_ch, CURLOPT_NOBODY, true);
 	curl_setopt($my_ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($my_ch, CURLOPT_FOLLOWLOCATION, true);
 	curl_setopt($my_ch, CURLOPT_TIMEOUT, 10);
 	$r = curl_exec($my_ch);
 	foreach(explode("\n", $r) as $header) {
