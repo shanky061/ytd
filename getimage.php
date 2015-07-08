@@ -31,7 +31,7 @@ else
         exit;
 }
 
-$thumb = 'default';
+$thumb = 'mqdefault';
 /*
  *    Player Background Thumbnail	480x360px	:	http://i1.ytimg.com/vi/VIDEO_ID/0.jpg
  *    Normal Quality Thumbnail		120x90px	:	http://i1.ytimg.com/vi/VIDEO_ID/default.jpg
@@ -45,7 +45,7 @@ if(!empty($_GET['sz']))
 {
         $arg = $_GET['sz'];
 		switch ($arg)
-	   	{
+		{
 			case 'hd':
 				$thumb = 'hqdefault';
 				break;
