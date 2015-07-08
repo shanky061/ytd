@@ -6,9 +6,8 @@
   #$config['ThumbnailImageMode']=2;		// show thumbnail image by proxy from this server
 
   /**********|| Video Download Link Configuration ||***************/
-  $config['VideoLinkMode']='direct';	// show only direct download link
-  #$config['VideoLinkMode']='proxy';	// show only by proxy download link
-  #$config['VideoLinkMode']='both';		// show both direct and by proxy download links
+  $config['VideoLinkMode']='direct';	// show direct download link
+  #$config['VideoLinkMode']='proxy';	// show proxy download link
 
   /**********|| Other ||***************/
   // Set your default timezone

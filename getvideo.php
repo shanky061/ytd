@@ -110,7 +110,8 @@ foreach ($formats_array as $format)
 	parse_str($format, $avail_formats[$i]);
 	$avail_formats[$i]['type'] = explode(';', $avail_formats[$i]['type'])[0];
 	$avail_formats[$i]['url'] = urldecode($avail_formats[$i]['url']).'&title='.urlencode($v_title);
-//	$avail_formats[$i]['size'] = Size(get_size($avail_formats[$i]['url']));
+	$avail_formats[$i]['proxy'] = 'download.php?title='.urlencode($v_title).'&mime='.urlencode($avail_formats[$i]['type']).
+									'&token='.base64_encode($avail_formats[$i]['url']);
 	$avail_formats[$i]['res'] = explode('/', explode(',', $fmt_list)[$i])[1];
 	$i++;
 }
@@ -194,7 +195,10 @@ foreach ($avail_formats as $vid)
 	echo '							<td>'.$vid['res'].'</td>';
 	echo '							<td>'.$vid['quality'].'</td>';
 	echo '							<td>'.Size(get_size($vid['url'])).'</td>';
-	echo '							<td><a href="'.$vid['url'].'" class="btn btn-primary" role="button">Download</a></td>';
+	if ($config['VideoLinkMode'] == 'direct')
+		echo '							<td><a href="'.$vid['url'].'" class="btn btn-primary" role="button">Download</a></td>';
+	else
+		echo '							<td><a href="'.$vid['proxy'].'" class="btn btn-primary" role="button">Download</a></td>';
 	echo '						</tr>';
 }
 ?>
