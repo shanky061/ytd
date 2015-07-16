@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Youtube Downloader</title>
+		<title>YouTube Downloader</title>
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	</head>
 
@@ -13,7 +13,7 @@
 					<span class="input-group-addon">youtube.com/watch?v=</span>
 					<input class="form-control" type="text" name="videoid" id="videoid" size="20" placeholder="VideoID" />
 				</div>
-				<input class="btn btn-primary" type="submit" name="type" id="type" value="Download" />
+				<input class="btn btn-primary" type="submit" value="Download" />
 			</form>
 		</div>
 	</body>

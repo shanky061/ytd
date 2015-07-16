@@ -155,11 +155,38 @@ if (isset($_REQUEST['type']) && $_REQUEST['type'] == 'direct')
 		header('Location: '.$avail_formats[$best_format]['url']);
 	exit;
 }
+elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'json')
+{
+	// Create JSON response
+	class json
+	{
+		public $Status = "";
+		public $Data = array();
+	}
+	$j = new json();
+	$j->Status = "OK";
+	// TODO : Add Fail Status.
+
+	$i = 0;
+	foreach ($avail_formats as $vid)
+	{
+		$D[$i]['itag'] = $vid['itag'];
+		$D[$i]['URL'] = $vid['url'];
+		$D[$i]['format'] = $vid['type'];
+		$D[$i]['quality'] = $vid['res'];
+		$i++;
+	}
+	$j->Data = $D;
+	// Convert it to sting and echo it.
+	echo json_encode($j, JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
+	exit;
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<meta charset="utf-8">
 		<title><?=$v_title?></title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 	</head>
