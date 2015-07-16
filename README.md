@@ -16,7 +16,12 @@ equivalent to download the file.
 Second, you can directly target the getvideo.php script, passing in a videoID and
 preferred format, and you will get redirected to the file itself. 
 
-`http://example.com/yt/getvideo.mp4?&type=direct&videoid=GkvvH8pBoTg&format=ipad`
+`http://example.com/getvideo.php?type=direct&videoid=GkvvH8pBoTg&format=ipad`
+
+Third, you can get downlaod data with all available formats in JSON format, passing
+type as JSON and videoID.
+
+`http://example.com/getvideo.php?videoid=GkvvH8pBoTg&type=json`
 
 Potential formats:
 * best = just give me the largest file / best quality
