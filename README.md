@@ -1,6 +1,4 @@
-#Scripts to download videos from YouTube.
-
-Forked from [here](https://github.com/jeckman/YouTube-Downloader "YouTube-Downloader").
+#Youtube Downloader
 
 In order for direct download links to work (clicking on the file type in results list)
 your server must be using IPv6. If you are using IPv4, YouTube checks to see if the token
